@@ -1,0 +1,64 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "AOC2023",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			//on local system set a local environment variable of
+			// DEVCONTAINER_BUILD_CERT_STATUS=no_cert for nomrall handling
+			// DEVCONTAINER_BUILD_CERT_STATUS=with_cert to inject whatever cert(s) is pointed to via NODE_EXTRA_CA_CERTS into the container.
+			"DEVCONTAINER_BUILD_CERT_STATUS": "${localEnv:DEVCONTAINER_BUILD_CERT_STATUS}"
+			}
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+
+	"mounts": [
+    "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind",
+		"source=/data,target=/data,type=bind"
+	],
+
+	"initializeCommand": ["pwsh", "-Command", "if (Test-Path env:NODE_EXTRA_CA_CERTS) { copy-item $env:NODE_EXTRA_CA_CERTS ./.devcontainer/node_extra_cert.crt } "],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": ["pwsh", "-Command", "if (Test-Path /workspaces/AOC2023/.devcontainer/node_extra_cert.crt) { remove-Item /workspaces/AOC2023/.devcontainer/node_extra_cert.crt } "],
+
+	"customizations": {
+		"vscode": {
+			"settings": { 
+				"terminal.integrated.defaultProfile.linux": "pwsh",
+				"git.autofetch": true,
+				"powershell.powerShellAdditionalExePaths": {
+					"LinuxPath" : "/opt/microsoft/powershell/7/pwsh"
+				},
+				"powershell.powerShellDefaultVersion": "LinuxPath"
+			},
+			"extensions": [
+				//"amazonwebservices.aws-toolkit-vscode",
+				//"mark-tucker.aws-cli-configure",
+				"ms-vscode.powershell",
+				//"hashicorp.terraform",
+				//"dbaeumer.vscode-eslint",
+				"golang.go",
+				//"ms-vscode.makefile-tools",
+				//"github.copilot",
+				"ms-vscode.live-server"
+			]
+		}
+	},
+
+	"workspaceMount": "source=workspace-volume,target=/workspace,type=volume",
+	"workspaceFolder": "/workspace/AOC2023"
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
