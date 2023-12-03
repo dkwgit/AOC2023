@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, World")
-	fmt.Println(day01.Puzzle01())
+	fmt.Println("Welcome to AOC2023!")
+	fmt.Println(day01.Puzzle01Driver())
+	fmt.Println(day01.Puzzle02Driver())
 }
