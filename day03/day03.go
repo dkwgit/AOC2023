@@ -3,7 +3,7 @@ package day03
 import (
 	"fmt"
 
-	util "dkwgit/aoc2023/utility"
+	util "github.com/dkwgit/aoc2023/utility"
 )
 
 func Puzzle01(dc *util.DayContext) string {

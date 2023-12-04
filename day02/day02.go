@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	util "dkwgit/aoc2023/utility"
+	util "github.com/dkwgit/aoc2023/utility"
 )
 
 type draw struct {

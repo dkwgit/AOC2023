@@ -3,7 +3,7 @@ package day01
 import (
 	"testing"
 
-	util "dkwgit/aoc2023/utility"
+	util "github.com/dkwgit/aoc2023/utility"
 )
 
 func TestPuzzle01(t *testing.T) {

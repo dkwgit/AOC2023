@@ -1,8 +1,9 @@
 package day03
 
 import (
-	util "dkwgit/aoc2023/utility"
 	"testing"
+
+	util "github.com/dkwgit/aoc2023/utility"
 )
 
 func TestPuzzle01(t *testing.T) {

@@ -1,4 +1,4 @@
-module dkwgit/aoc2023
+module github.com/dkwgit/aoc2023
 
 go 1.21.4
 

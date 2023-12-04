@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unicode"
 
-	util "dkwgit/aoc2023/utility"
+	util "github.com/dkwgit/aoc2023/utility"
 
 	strrv "4d63.com/strrev"
 )

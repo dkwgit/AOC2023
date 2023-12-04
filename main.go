@@ -1,12 +1,13 @@
 package main
 
 import (
-	"dkwgit/aoc2023/day01"
-	"dkwgit/aoc2023/day02"
-	"dkwgit/aoc2023/day03"
 	"fmt"
 
-	util "dkwgit/aoc2023/utility"
+	"github.com/dkwgit/aoc2023/day01"
+	"github.com/dkwgit/aoc2023/day02"
+	"github.com/dkwgit/aoc2023/day03"
+
+	util "github.com/dkwgit/aoc2023/utility"
 )
 
 func main() {
