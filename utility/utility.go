@@ -21,6 +21,14 @@ func NewDayContext(name string, lines []string) *DayContext {
 	return dc
 }
 
+func SumIntArray(array []int) int {
+	result := 0
+	for _, v := range array {
+		result += v
+	}
+	return result
+}
+
 func (dc *DayContext) loadLines() {
 	var path string = "/workspace/AOC2023/input/" + dc.Name + ".txt"
 	file, err := os.Open(path)

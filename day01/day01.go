@@ -27,7 +27,7 @@ func Puzzle01(dc *util.DayContext) string {
 		values = append(values, value)
 	}
 
-	result := sum(values)
+	result := util.SumIntArray(values)
 
 	return fmt.Sprintf("%s-01: %d", dc.Name, result)
 }
@@ -53,17 +53,9 @@ func Puzzle02(dc *util.DayContext) string {
 		values = append(values, value)
 	}
 
-	result := sum(values)
+	result := util.SumIntArray(values)
 
 	return fmt.Sprintf("%s-02: %d", dc.Name, result)
-}
-
-func sum(array []int) int {
-	result := 0
-	for _, v := range array {
-		result += v
-	}
-	return result
 }
 
 func firstDigitInStringForward(s string) string {
