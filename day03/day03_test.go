@@ -26,7 +26,9 @@ func TestPuzzle01(t *testing.T) {
 				"...$.*....",
 				".664.598..",
 			}),
-			"day03-01: 4361"},
+			"day03-01: 4361",
+		},
+		{"result 03-01", util.NewDayContext("day03", nil), "day03-01: 525181"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -37,13 +39,29 @@ func TestPuzzle01(t *testing.T) {
 	}
 }
 
-/*func TestPuzzle02(t *testing.T) {
+func TestPuzzle02(t *testing.T) {
 	tests := []struct {
 		name string
 		dc   *util.DayContext
 		want string
 	}{
-		{"sample input 03-02", nil, "day03-02: 0"},
+		{
+			"sample input 03-02",
+			util.NewDayContext("day03", []string{
+				"467..114..",
+				"...*......",
+				"..35..633.",
+				"......#...",
+				"617*......",
+				".....+.58.",
+				"..592.....",
+				"......755.",
+				"...$.*....",
+				".664.598..",
+			}),
+			"day03-02: 467835",
+		},
+		{"result 03-02", util.NewDayContext("day03", nil), "day03-02: 84289137"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -52,4 +70,4 @@ func TestPuzzle01(t *testing.T) {
 			}
 		})
 	}
-}*/
+}
