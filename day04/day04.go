@@ -15,6 +15,7 @@ type card struct {
 	id      int
 	wins    set.Set[string]
 	numbers set.Set[string]
+	count   int
 }
 
 func (c *card) score() int {
@@ -65,7 +66,22 @@ func Puzzle02(dc *util.DayContext) string {
 		cards = loadCards(dc.InputLines, winningCardCount, cardCount)
 		cardsMap[dc] = cards
 	}
+
+	for cardIndex := 0; cardIndex < len(cards); cardIndex++ {
+		intersect := cards[cardIndex].numbers.Intersect(cards[cardIndex].wins)
+		wins := intersect.Cardinality()
+		if wins >= 0 {
+			maxIndex := int(math.Min((float64)(cardIndex+wins), (float64)(len(cards)-1)))
+			for forwardIndex := cardIndex + 1; forwardIndex <= maxIndex; forwardIndex++ {
+				cards[forwardIndex].count += cards[cardIndex].count
+			}
+		}
+	}
+
 	var result = 0
+	for cardIndex := 0; cardIndex < len(cards); cardIndex++ {
+		result += cards[cardIndex].count
+	}
 
 	return fmt.Sprintf("day04-02: %d", result)
 }
@@ -89,6 +105,7 @@ func loadCards(inputLines []string, winCount int, numberCount int) []card {
 			id:      cardNumber,
 			wins:    set.NewSet[string](winningNumbers...),
 			numbers: set.NewSet[string](numbers...),
+			count:   1,
 		}
 	}
 
