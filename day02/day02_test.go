@@ -20,9 +20,13 @@ func TestPuzzle01(t *testing.T) {
 				"Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red",
 				"Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red",
 				"Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
-			}), "day02-01: 8",
+			}, nil), "day02-01: 8",
 		},
-		{"result 02-01", util.NewDayContext("day02", nil), "day02-01: 2528"},
+		{
+			"result 02-01",
+			util.NewDayContext("day02", nil, nil),
+			"day02-01: 2528",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -47,9 +51,13 @@ func TestPuzzle02(t *testing.T) {
 				"Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red",
 				"Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red",
 				"Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
-			}), "day02-02: 2286",
+			}, nil), "day02-02: 2286",
 		},
-		{"result 02-02", util.NewDayContext("day02", nil), "day02-02: 67363"},
+		{
+			"result 02-02",
+			util.NewDayContext("day02", nil, nil),
+			"day02-02: 67363",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

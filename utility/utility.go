@@ -8,9 +8,10 @@ import (
 type DayContext struct {
 	InputLines []string
 	Name       string
+	Args       []string
 }
 
-func NewDayContext(name string, lines []string) *DayContext {
+func NewDayContext(name string, lines []string, args []string) *DayContext {
 	dc := new(DayContext)
 	dc.Name = name
 	if lines == nil {
@@ -18,6 +19,7 @@ func NewDayContext(name string, lines []string) *DayContext {
 	} else {
 		dc.InputLines = lines
 	}
+	dc.Args = args
 	return dc
 }
 
