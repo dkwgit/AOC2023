@@ -27,7 +27,7 @@ func TestPuzzle01(t *testing.T) {
 		{
 			"result 04-01",
 			util.NewDayContext("day04", nil, []string{"10", "25"}),
-			"day04-01: 525181",
+			"day04-01: 23028",
 		},
 	}
 	for _, tt := range tests {
