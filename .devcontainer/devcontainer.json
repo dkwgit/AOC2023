@@ -51,7 +51,8 @@
 				"golang.go",
 				//"ms-vscode.makefile-tools",
 				//"github.copilot",
-				"ms-vscode.live-server"
+				"ms-vscode.live-server",
+				"mhutchie.git-graph"
 			]
 		}
 	},
